@@ -2,6 +2,8 @@ NAME = so_long
 
 CC = gcc
 
+CFLAGS = -Wall -Werror -Wextra
+
 all : $(NAME)
 
 $(NAME) :
@@ -10,7 +12,10 @@ $(NAME) :
 		./SOLONG/libso_long.a \
 		./PRINTF/libftprintf.a \
 		./LIBFT/libft.a\
-		./LIST/list.a
+		./LIST/list.a \
+		./minilibx-linux/libmlx.a \
+		./minilibx-linux/libmlx_Linux.a \
+		-lXext -lX11 -lm
 
 clean :
 		make clean -C ./SOLONG/
