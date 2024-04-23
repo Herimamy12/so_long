@@ -3,73 +3,91 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:43:51 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/22 12:43:53 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:50:25 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	count_length_map(int fd)
+int	count_length_map(char **charmap)
 {
-	int		i;
-	char	*line;
+	int	i;
 
 	i = 0;
-	line = get_next_line (fd);
-	if (!line)
-		return (0);
-	while (line[i] != '\n')
+	while (charmap[0][i] != '\n')
 		i++;
 	if (i < 3)
 	{
-		ft_printf ("Map Error\n");
+		ft_printf ("Map error !\n");
 		return (0);
 	}
 	return (i);
 }
 
-int	count_width_map(int fd)
+int	count_width_map(char **charmap)
+{
+	int		i;
+
+	i = 0;
+	while (charmap[i] != NULL)
+		i++;
+	if (i < 3)
+	{
+		ft_printf ("Map error !\n");
+		return (0);
+	}
+	return (i);
+}
+
+void	free_char_two_star(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free (str[i]);
+		i++;
+		str = &(str[i]);
+	}
+}
+
+char	**get_char_map(int fd)
 {
 	int		i;
 	char	*line;
+	char	**charmap;
 
-	i = 1;
-	line = get_next_line (fd);
-	if (!line)
+	charmap = (char **) malloc (sizeof (char *) * 1024);
+	if (!charmap)
 		return (0);
+	line = get_next_line (fd);
+	i = 0;
 	while (line)
 	{
-		i++;
+		charmap[i] = line;
 		line = get_next_line (fd);
+		i++;
 	}
-	if (i < 3)
-	{
-		ft_printf ("Map Error\n");
-		return (0);
-	}
-	return (i);
+	return (charmap);
 }
-
-//int	map_content_error(int fd, int length, int width)
 
 int	get_map_error(int fd)
 {
-	int	i;
-	int	width;
-	int	length;
+	int		width;
+	int		length;
+	char	**charmap;
 
-	i = 0;
-	length = count_length_map (fd);
-	if (length == 0)
+	charmap = get_char_map (fd);
+	length = count_length_map (charmap);
+	width = count_width_map (charmap);
+	if (!length || !width)
 		return (42);
-	width = count_width_map (fd);
-	if (width == 00)
+	if (map_border_content_error (charmap, length, width))
 		return (42);
-	// if (map_content_error (fd, length, width));
-	// 	return (42);
-	ft_printf ("length = %d\nwidth = %d\n", length, width);
-	return (i);
+	ft_printf ("length = %d, width = %d\n", length, width);
+	return (0);
 }

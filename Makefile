@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-all : $(NAME)
+all : $(NAME) clean
 
 $(NAME) :
 		make -C ./SOLONG/
