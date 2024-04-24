@@ -4,7 +4,8 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRC = main.c get_map.c get_map_next_one.c
+SRC = main.c get_map.c get_map_next_one.c \
+		get_map_next_two.c
 
 OBJ = $(SRC:.c=.o)
 

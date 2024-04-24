@@ -4,14 +4,14 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-all : $(NAME) clean
+all : $(NAME)
 
 $(NAME) :
 		make -C ./SOLONG/
 		$(CC) -o $@ \
 		./SOLONG/libso_long.a \
 		./PRINTF/libftprintf.a \
-		./LIBFT/libft.a\
+		./LIBFT/libft.a \
 		./LIST/list.a \
 		./minilibx-linux/libmlx.a \
 		./minilibx-linux/libmlx_Linux.a \

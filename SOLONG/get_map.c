@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:43:51 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/23 13:50:25 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:12:16 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	count_length_map(char **charmap)
 	int	i;
 
 	i = 0;
-	while (charmap[0][i] != '\n')
+	while (charmap[0][i] != '\0')
 		i++;
 	if (i < 3)
 	{
@@ -51,27 +51,32 @@ void	free_char_two_star(char **str)
 	{
 		free (str[i]);
 		i++;
-		str = &(str[i]);
 	}
+	free (str);
 }
 
 char	**get_char_map(int fd)
 {
 	int		i;
+	char	*tmp;
 	char	*line;
 	char	**charmap;
 
-	charmap = (char **) malloc (sizeof (char *) * 1024);
-	if (!charmap)
-		return (0);
+	tmp = NULL;
 	line = get_next_line (fd);
 	i = 0;
 	while (line)
 	{
-		charmap[i] = line;
+		tmp = ft_strjoin (tmp, line);
+		free (line);
 		line = get_next_line (fd);
 		i++;
 	}
+	charmap = ft_split (tmp, '\n');
+	if (!charmap)
+		return (0);
+	free (tmp);
+	free (line);
 	return (charmap);
 }
 
@@ -85,9 +90,15 @@ int	get_map_error(int fd)
 	length = count_length_map (charmap);
 	width = count_width_map (charmap);
 	if (!length || !width)
+	{
+		free_char_two_star (charmap);
 		return (42);
-	if (map_border_content_error (charmap, length, width))
+	}
+	else if (map_border_content_error (charmap, length, width))
+	{
+		free_char_two_star (charmap);
 		return (42);
-	ft_printf ("length = %d, width = %d\n", length, width);
+	}
+	free_char_two_star (charmap);
 	return (0);
 }

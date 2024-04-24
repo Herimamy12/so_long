@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:10:16 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/23 13:49:17 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:34:38 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,28 +64,54 @@ int	border_left_right_error(char **charmap, int length, int width)
 	return (0);
 }
 
-int	content_error(char **charmap, int length, int width)
+int	length_error(char **charmap, int length, int width)
 {
 	int	i;
 	int	j;
-	int	count_collector;
+	int	count_length;
 
 	i = 0;
-	count_collector = 0;
+	while (i < width)
+	{
+		j = 0;
+		count_length = 0;
+		while (charmap[i][j] != '\n' && charmap[i][j] != '\0')
+		{
+			count_length++;
+			j++;
+		}
+		if (count_length != length)
+		{
+			ft_printf ("Length_error\n");
+			return (42);
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	player_error(char **charmap, int length, int width)
+{
+	int	i;
+	int	j;
+	int	count_player;
+
+	i = 0;
+	count_player = 0;
 	while (i < width)
 	{
 		j = 0;
 		while (j < length)
 		{
-			if (charmap[i][j] == 'C')
-				count_collector++;
+			if (charmap[i][j] == 'P')
+				count_player++;
 			j++;
 		}
 		i++;
 	}
-	if (count_collector < 1)
+	if (count_player < 1 || 1 < count_player)
 	{
-		ft_printf ("Nothing collector\n");
+		ft_printf ("Player error\n");
 		return (42);
 	}
 	return (0);
@@ -97,7 +123,15 @@ int	map_border_content_error(char **charmap, int length, int width)
 		return (42);
 	if (border_left_right_error (charmap, length, width))
 		return (42);
-	if (content_error (charmap, length, width))
+	if (length_error (charmap, length, width))
+		return (42);
+	if (player_error (charmap, length, width))
+		return (42);
+	if (!collector_error (charmap, length, width))
+		return (42);
+	if (exit_error (charmap, length, width))
+		return (42);
+	if (check_collector_exit_error (charmap, length, width))
 		return (42);
 	return (0);
 }
