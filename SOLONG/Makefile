@@ -2,10 +2,11 @@ NAME = libso_long.a
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 SRC = main.c get_map.c get_map_next_one.c \
-		get_map_next_two.c
+		get_map_next_two.c get_map_next_three.c \
+		so_long.c
 
 OBJ = $(SRC:.c=.o)
 

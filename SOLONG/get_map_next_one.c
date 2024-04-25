@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:10:16 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/24 13:34:38 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/25 09:49:44 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	border_top_bottom_error(char **charmap, int length, int width)
 			{
 				if (charmap[i][j] != '1')
 				{
-					ft_printf ("Map error !\n");
+					ft_printf ("Error\n");
 					return (42);
 				}
 			}
@@ -53,7 +53,7 @@ int	border_left_right_error(char **charmap, int length, int width)
 			{
 				if (charmap[i][j] != '1')
 				{
-					ft_printf ("Map error !\n");
+					ft_printf ("Error\n");
 					return (42);
 				}
 			}
@@ -82,7 +82,7 @@ int	length_error(char **charmap, int length, int width)
 		}
 		if (count_length != length)
 		{
-			ft_printf ("Length_error\n");
+			ft_printf ("Error\n");
 			return (42);
 		}
 		i++;
@@ -111,7 +111,7 @@ int	player_error(char **charmap, int length, int width)
 	}
 	if (count_player < 1 || 1 < count_player)
 	{
-		ft_printf ("Player error\n");
+		ft_printf ("Error\n");
 		return (42);
 	}
 	return (0);
@@ -127,10 +127,16 @@ int	map_border_content_error(char **charmap, int length, int width)
 		return (42);
 	if (player_error (charmap, length, width))
 		return (42);
-	if (!collector_error (charmap, length, width))
+	if (collector_error (charmap, length, width))
+	{
+		ft_printf ("Error\n");
 		return (42);
+	}
 	if (exit_error (charmap, length, width))
+	{
+		ft_printf ("Error\n");
 		return (42);
+	}
 	if (check_collector_exit_error (charmap, length, width))
 		return (42);
 	return (0);
