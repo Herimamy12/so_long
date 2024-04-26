@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:43:51 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/24 11:12:16 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:45:01 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,25 +80,29 @@ char	**get_char_map(int fd)
 	return (charmap);
 }
 
-int	get_map_error(int fd)
+char	**get_map_error(int fd)
 {
 	int		width;
 	int		length;
 	char	**charmap;
+	char	**map_copy;
 
 	charmap = get_char_map (fd);
-	length = count_length_map (charmap);
 	width = count_width_map (charmap);
+	length = count_length_map (charmap);
+	map_copy = ft_map_copy (charmap, length, width);
 	if (!length || !width)
 	{
 		free_char_two_star (charmap);
-		return (42);
+		free_char_two_star (map_copy);
+		return (NULL);
 	}
 	else if (map_border_content_error (charmap, length, width))
 	{
 		free_char_two_star (charmap);
-		return (42);
+		free_char_two_star (map_copy);
+		return (NULL);
 	}
 	free_char_two_star (charmap);
-	return (0);
+	return (map_copy);
 }

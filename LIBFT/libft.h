@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:31:30 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/08 09:31:31 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:59:15 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ long	ft_atol(const char *nptr);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 char	**ft_split(char const *s, char c);
 int		ft_count_word(char const *s, char c);
 int		ft_isdigit(int c);

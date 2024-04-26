@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:25:37 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/25 09:48:13 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/26 08:36:13 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int	check_collector_exit_error(char **map, int ln, int wdth)
 
 	pos_i_a = find_pos_i(map, ln, wdth, 'P');
 	pos_y_a = find_pos_y(map, ln, wdth, 'P');
-	check_the_path_error (map, ln, wdth, pos_i_a, pos_y_a);
+	check_the_path_error (map, pos_i_a, pos_y_a);
 	if (!collector_error (map, ln, wdth))
 	{
 		ft_printf ("Error\n");

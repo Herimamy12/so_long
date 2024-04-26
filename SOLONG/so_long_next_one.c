@@ -3,11 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_next_one.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:27:02 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/25 13:27:04 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/26 08:40:13 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "so_long.h"

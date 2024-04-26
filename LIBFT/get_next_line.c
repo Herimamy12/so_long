@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 11:19:35 by nherimam          #+#    #+#             */
-/*   Updated: 2024/03/03 11:19:41 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:00:03 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,21 @@ int	ft_strcmp(char *cmd, char *set)
 	if (set[i] != '\0' || cmd[i] != '\0')
 		return (0);
 	return (42);
+}
+
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*ptr;
+	int		len;
+
+	ptr = NULL;
+	len = ft_strlen(s);
+	while ((len) >= 0)
+	{
+		ptr = (char *)&s[len];
+		if (s[len] == (char)c)
+			return (ptr);
+		len--;
+	}
+	return (0);
 }
