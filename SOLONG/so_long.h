@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:19:14 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/26 10:04:41 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:47:31 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,10 @@ int		check_collector_exit_error(char **map, int ln, int wdth);
 void	check_the_path_error(char **map, int i, int y);
 int		check_key(int key, void *param);
 int		check_mouse(int action, void *param);
+void	so_long(t_wmap_mlx *p);
+void	fill_window(t_wmap_mlx *p, int ln, int wdth);
+void	fill_player(t_wmap_mlx *p, int i, int j);
+void	fill_wall(t_wmap_mlx *p, int i, int j);
+void	fill_road(t_wmap_mlx *p, int i, int j);
 
 #endif
