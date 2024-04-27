@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:24:02 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/26 10:14:53 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/27 08:21:14 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ char	**ft_map_copy(char **charmap, int length, int width)
 			map_copy[i][j] = charmap[i][j];
 			j++;
 		}
+		map_copy[i][j] = '\0';
 		i++;
 	}
 	map_copy[i] = NULL;

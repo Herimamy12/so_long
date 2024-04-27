@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: herimamy <herimamy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:21:53 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/26 22:53:47 by herimamy         ###   ########.fr       */
+/*   Updated: 2024/04/27 08:18:46 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	so_long(t_wmap_mlx *p)
 	ig_l = 50;
 	ln = count_length_map (p->map);
 	wdth = count_width_map (p->map);
+	ft_printf ("map = %s,\nln = %d, wd = %d\n", p->map[0], ln, wdth);
 	p->win_ptr = mlx_new_window(p->mlx_ptr, ln * 50, wdth * 50, "so_long");
 	if (!p->win_ptr)
 		return ;

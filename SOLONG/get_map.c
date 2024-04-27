@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:43:51 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/26 09:45:01 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/27 08:17:07 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	count_length_map(char **charmap)
 		i++;
 	if (i < 3)
 	{
-		ft_printf ("Map error !\n");
+		ft_printf ("Error !\n");
 		return (0);
 	}
 	return (i);
@@ -36,7 +36,7 @@ int	count_width_map(char **charmap)
 		i++;
 	if (i < 3)
 	{
-		ft_printf ("Map error !\n");
+		ft_printf ("Error !\n");
 		return (0);
 	}
 	return (i);
