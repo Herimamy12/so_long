@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: herimamy <herimamy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:19:14 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/27 13:47:31 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:00:09 by herimamy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,20 @@ int		find_pos_i(char **charmap, int length, int width, char set);
 int		find_pos_y(char **charmap, int length, int width, char set);
 int		check_collector_exit_error(char **map, int ln, int wdth);
 void	check_the_path_error(char **map, int i, int y);
-int		check_key(int key, void *param);
 int		check_mouse(int action, void *param);
 void	so_long(t_wmap_mlx *p);
 void	fill_window(t_wmap_mlx *p, int ln, int wdth);
 void	fill_player(t_wmap_mlx *p, int i, int j);
 void	fill_wall(t_wmap_mlx *p, int i, int j);
 void	fill_road(t_wmap_mlx *p, int i, int j);
+void	fill_collector(t_wmap_mlx *p, int i, int j);
+void	fill_exit(t_wmap_mlx *p, int i, int j);
+void	exit_window(t_wmap_mlx *data);
+void	move_up(t_wmap_mlx *data, int play_i, int play_j);
+void	move_down(t_wmap_mlx *data, int play_i, int play_j);
+void	move_left(t_wmap_mlx *data, int play_i, int play_j);
+void	move_right(t_wmap_mlx *data, int play_i, int play_j);
+int		handle_keypress(int keycode, t_wmap_mlx *data);
+void	manage_to_leave(t_wmap_mlx *data);
 
 #endif

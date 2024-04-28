@@ -30,3 +30,42 @@ int	main(int argc, char **argv)
 	so_long (&wmap_mlx);
 	return (0);
 }
+
+//#################################################################
+//#################################################################
+//#################################################################
+//#################################################################
+//#################################################################
+
+// typedef struct s_data
+// {
+//     void *mlx_ptr;
+//     void *win_ptr;
+// } t_data;
+
+// // Fonction appelée lors de la fermeture de la fenêtre
+// int close_window(int keycode, t_data *data)
+// {
+// 	if (keycode == 0)
+// 		return (0);
+//     mlx_destroy_window(data->mlx_ptr, data->win_ptr); // Fermer la fenêtre
+//     // Libérer d'autres ressources si nécessaire
+//     exit(0); // Quitter le programme proprement
+// }
+
+// int main()
+// {
+//     t_data data;
+
+//     // Initialisation de la minilibX
+//     data.mlx_ptr = mlx_init();
+//     data.win_ptr = mlx_new_window(data.mlx_ptr, 800, 600, "Ma fenêtre");
+
+//     // Associer la fonction close_window à l'événement de fermeture
+//     mlx_hook(data.win_ptr, 17, 0, close_window, &data);
+
+//     // Boucle principale du programme
+//     mlx_loop(data.mlx_ptr);
+
+//     return 0;
+// }
