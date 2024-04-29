@@ -16,6 +16,7 @@ void	move_up(t_wmap_mlx *data, int play_i, int play_j)
 {
 	if (data->map[play_i - 1][play_j] == 'E')
 	{
+		data->count++;
 		fill_road (data, play_i, play_j);
 		fill_player (data, play_i - 1, play_j);
 		data->map[play_i][play_j] = '0';
@@ -23,23 +24,27 @@ void	move_up(t_wmap_mlx *data, int play_i, int play_j)
 	}
 	else if (data->map[play_i][play_j] == 'E')
 	{
+		data->count++;
 		fill_exit (data, play_i, play_j);
 		fill_player (data, play_i - 1, play_j);
 		data->map[play_i - 1][play_j] = 'P';
 	}
 	else
 	{
+		data->count++;
 		fill_road (data, play_i, play_j);
 		fill_player (data, play_i - 1, play_j);
 		data->map[play_i][play_j] = '0';
 		data->map[play_i - 1][play_j] = 'P';
 	}
+	ft_printf ("mouv = %d\n", data->count);
 }
 
 void	move_down(t_wmap_mlx *data, int play_i, int play_j)
 {
 	if (data->map[play_i + 1][play_j] == 'E')
 	{
+		data->count++;
 		fill_road (data, play_i, play_j);
 		fill_player (data, play_i + 1, play_j);
 		data->map[play_i][play_j] = '0';
@@ -47,23 +52,27 @@ void	move_down(t_wmap_mlx *data, int play_i, int play_j)
 	}
 	else if (data->map[play_i][play_j] == 'E')
 	{
+		data->count++;
 		fill_exit (data, play_i, play_j);
 		fill_player (data, play_i + 1, play_j);
 		data->map[play_i + 1][play_j] = 'P';
 	}
 	else
 	{
+		data->count++;
 		fill_road (data, play_i, play_j);
 		fill_player (data, play_i + 1, play_j);
 		data->map[play_i][play_j] = '0';
 		data->map[play_i + 1][play_j] = 'P';
 	}
+	ft_printf ("mouv = %d\n", data->count);
 }
 
 void	move_left(t_wmap_mlx *data, int play_i, int play_j)
 {
 	if (data->map[play_i][play_j - 1] == 'E')
 	{
+		data->count++;
 		fill_road (data, play_i, play_j);
 		fill_player (data, play_i, play_j - 1);
 		data->map[play_i][play_j] = '0';
@@ -71,23 +80,27 @@ void	move_left(t_wmap_mlx *data, int play_i, int play_j)
 	}
 	else if (data->map[play_i][play_j] == 'E')
 	{
+		data->count++;
 		fill_exit (data, play_i, play_j);
 		fill_player (data, play_i, play_j - 1);
 		data->map[play_i][play_j - 1] = 'P';
 	}
 	else
 	{
+		data->count++;
 		fill_road (data, play_i, play_j);
 		fill_player (data, play_i, play_j - 1);
 		data->map[play_i][play_j] = '0';
 		data->map[play_i][play_j - 1] = 'P';
 	}
+	ft_printf ("mouv = %d\n", data->count);
 }
 
 void	move_right(t_wmap_mlx *data, int play_i, int play_j)
 {
 	if (data->map[play_i][play_j + 1] == 'E')
 	{
+		data->count++;
 		fill_road (data, play_i, play_j);
 		fill_player (data, play_i, play_j + 1);
 		data->map[play_i][play_j] = '0';
@@ -95,17 +108,20 @@ void	move_right(t_wmap_mlx *data, int play_i, int play_j)
 	}
 	else if (data->map[play_i][play_j] == 'E')
 	{
+		data->count++;
 		fill_exit (data, play_i, play_j);
 		fill_player (data, play_i, play_j + 1);
 		data->map[play_i][play_j + 1] = 'P';
 	}
 	else
 	{
+		data->count++;
 		fill_road (data, play_i, play_j);
 		fill_player (data, play_i, play_j + 1);
 		data->map[play_i][play_j] = '0';
 		data->map[play_i][play_j + 1] = 'P';
 	}
+	ft_printf ("mouv = %d\n", data->count);
 }
 
 int	handle_keypress(int keycode, t_wmap_mlx *data)
@@ -126,9 +142,9 @@ int	handle_keypress(int keycode, t_wmap_mlx *data)
 	}
 	if (keycode == 65307)
 		exit_window (data);
-	else if (keycode == 122 && data->map[play_i - 1][play_j] != '1')
+	else if (keycode == 119 && data->map[play_i - 1][play_j] != '1')
 		move_up (data, play_i, play_j);
-	else if (keycode == 113 && data->map[play_i][play_j - 1] != '1')
+	else if (keycode == 97 && data->map[play_i][play_j - 1] != '1')
 		move_left (data, play_i, play_j);
 	else if (keycode == 115 && data->map[play_i + 1][play_j] != '1')
 		move_down (data, play_i, play_j);

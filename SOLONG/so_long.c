@@ -78,35 +78,8 @@ void	fill_window(t_wmap_mlx *p, int ln, int wdth)
 	}
 }
 
-// int close_window(int keycode, t_wmap_mlx *data)
-// {
-// 	if (keycode == 0)
-// 		return (0);
-// 	mlx_destroy_window (data->mlx_ptr, data->win_ptr);
-// 	mlx_destroy_display (data->mlx_ptr);
-// 	free_char_two_star (data->map);
-// 	free(data->mlx_ptr);
-// 	exit(0);
-// }
-
-void	so_long(t_wmap_mlx *p)
+int	close_window(t_wmap_mlx *data)
 {
-	int		ln;
-	int		wdth;
-
-	ln = count_length_map (p->map);
-	wdth = count_width_map (p->map);
-	p->mlx_ptr = mlx_init();
-	if (!p->mlx_ptr)
-		return ;
-	p->win_ptr = mlx_new_window(p->mlx_ptr, ln * 50, wdth * 50, "so_long");
-	if (!p->win_ptr)
-		return ;
-	fill_window (p, ln, wdth);
-	mlx_key_hook (p->win_ptr, handle_keypress, p);
-//	mlx_hook(p->win_ptr, 17, 0, close_window, p);
-//	mlx_hook(p->win_ptr, 3, 1L << 1, handle_keypress, p);
-//	mlx_loop_hook (p->mlx_ptr, handle_keypress, p);
-	mlx_mouse_hook (p->win_ptr, check_mouse, p);
-	mlx_loop(p->mlx_ptr);
+	handle_keypress (65307, data);
+	return (0);
 }

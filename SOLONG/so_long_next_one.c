@@ -47,23 +47,6 @@ void	exit_window(t_wmap_mlx *data)
 	exit(0);
 }
 
-int	check_mouse(int action, void *param)
-{
-	t_wmap_mlx	*wmap_mlx;
-
-	wmap_mlx = (t_wmap_mlx *)param;
-	ft_printf ("%d\n", action);
-	if (action == 65307)
-	{
-		mlx_destroy_window (wmap_mlx->mlx_ptr, wmap_mlx->win_ptr);
-		mlx_destroy_display (wmap_mlx->mlx_ptr);
-		free_char_two_star (wmap_mlx->map);
-		free(wmap_mlx->mlx_ptr);
-		exit(0);
-	}
-	return (0);
-}
-
 void	manage_to_leave(t_wmap_mlx *data)
 {
 	int	width;
@@ -72,5 +55,27 @@ void	manage_to_leave(t_wmap_mlx *data)
 	width = count_width_map (data->map);
 	length = count_length_map (data->map);
 	if (collector_error (data->map, length, width))
+	{
+		ft_printf ("mouv = %d\n", data->count);
 		exit_window (data);
+	}
+}
+
+void	so_long(t_wmap_mlx *p)
+{
+	int		ln;
+	int		wdth;
+
+	ln = count_length_map (p->map);
+	wdth = count_width_map (p->map);
+	p->mlx_ptr = mlx_init();
+	if (!p->mlx_ptr)
+		return ;
+	p->win_ptr = mlx_new_window(p->mlx_ptr, ln * 50, wdth * 50, "so_long");
+	if (!p->win_ptr)
+		return ;
+	fill_window (p, ln, wdth);
+	mlx_hook(p->win_ptr, 2, 1L << 0, handle_keypress, p);
+	mlx_hook(p->win_ptr, 17, 0, close_window, p);
+	mlx_loop(p->mlx_ptr);
 }
