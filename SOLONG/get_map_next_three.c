@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:24:02 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/27 08:21:14 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:20:04 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,38 @@ int	extension_error(char *file_name)
 	{
 		ft_printf ("Error\n");
 		return (42);
+	}
+	return (0);
+}
+
+int	check_content(char set)
+{
+	if (set != 'P' && set != '1')
+		if (set != 'E' && set != 'C')
+			if (set != '0')
+				return (42);
+	return (0);
+}
+
+int	content_error(char **charmap, int length, int width)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < width)
+	{
+		j = 0;
+		while (j < length)
+		{
+			if (check_content (charmap[i][j]))
+			{
+				ft_printf ("Error\n");
+				return (42);
+			}
+			j++;
+		}
+		i++;
 	}
 	return (0);
 }

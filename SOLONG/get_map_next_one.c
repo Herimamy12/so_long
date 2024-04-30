@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:10:16 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/25 09:49:44 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:16:22 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ int	player_error(char **charmap, int length, int width)
 
 int	map_border_content_error(char **charmap, int length, int width)
 {
+	if (content_error (charmap, length, width))
+		return (42);
 	if (border_top_bottom_error (charmap, length, width))
 		return (42);
 	if (border_left_right_error (charmap, length, width))
