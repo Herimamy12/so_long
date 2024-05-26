@@ -113,10 +113,5 @@ int	check_collector_exit_error(char **map, int ln, int wdth)
 		ft_printf ("Error\n");
 		return (42);
 	}
-	if (!exit_error (map, ln, wdth))
-	{
-		ft_printf ("Error\n");
-		return (42);
-	}
 	return (0);
 }

@@ -33,7 +33,7 @@ void	fill_exit(t_wmap_mlx *p, int i, int j)
 
 	ig_w = 50;
 	ig_l = 50;
-	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./i/E.xpm", &ig_w, &ig_l);
+	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./i/clDoor.xpm", &ig_w, &ig_l);
 	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 50, i * 50);
 	mlx_destroy_image (p->mlx_ptr, ig_p);
 }

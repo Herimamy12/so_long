@@ -19,11 +19,8 @@ int	count_length_map(char **charmap)
 	i = 0;
 	while (charmap[0][i] != '\0')
 		i++;
-	if (i < 3)
-	{
-		ft_printf ("Error !\n");
+	if (i < 1)
 		return (0);
-	}
 	return (i);
 }
 
@@ -34,11 +31,8 @@ int	count_width_map(char **charmap)
 	i = 0;
 	while (charmap[i] != NULL)
 		i++;
-	if (i < 3)
-	{
-		ft_printf ("Error !\n");
+	if (i < 1)
 		return (0);
-	}
 	return (i);
 }
 
@@ -91,13 +85,7 @@ char	**get_map_error(int fd)
 	width = count_width_map (charmap);
 	length = count_length_map (charmap);
 	map_copy = ft_map_copy (charmap, length, width);
-	if (!length || !width)
-	{
-		free_char_two_star (charmap);
-		free_char_two_star (map_copy);
-		return (NULL);
-	}
-	else if (map_border_content_error (charmap, length, width))
+	if (map_border_content_error (charmap, length, width))
 	{
 		free_char_two_star (charmap);
 		free_char_two_star (map_copy);

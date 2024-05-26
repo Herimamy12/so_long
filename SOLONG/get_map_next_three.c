@@ -21,7 +21,7 @@ void	check_the_path_error(char **map, int i, int y)
 	wdth = count_width_map (map);
 	if (i < 0 || i >= ln || y < 0 || y > wdth)
 		return ;
-	if (map[y][i] == '1' || map[y][i] == 'X')
+	if (map[y][i] == '1' || map[y][i] == 'X' || map[y][i] == 'E')
 		return ;
 	map[y][i] = 'X';
 	check_the_path_error (map, i - 1, y);

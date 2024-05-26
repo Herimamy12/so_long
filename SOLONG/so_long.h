@@ -61,5 +61,13 @@ void	move_right(t_wmap_mlx *data, int play_i, int play_j);
 int		handle_keypress(int keycode, t_wmap_mlx *data);
 void	manage_to_leave(t_wmap_mlx *data);
 int		close_window(t_wmap_mlx *data);
+void	fill_player_right(t_wmap_mlx *p, int i, int j);
+void	fill_player_left(t_wmap_mlx *p, int i, int j);
+void	fill_player_up(t_wmap_mlx *p, int i, int j);
+void	fill_player_down(t_wmap_mlx *p, int i, int j);
+void	ft_open_door(t_wmap_mlx *p, int ln, int wdth);
+void	fill_open_door(t_wmap_mlx *p, int i, int j);
+void	ft_mouve_management(int keycode, t_wmap_mlx *data, int i, int j);
+int		check_door_close(int keycode, t_wmap_mlx *data, int i, int j);
 
 #endif
