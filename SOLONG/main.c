@@ -18,12 +18,13 @@ int	main(int argc, char **argv)
 	t_wmap_mlx	wmap_mlx;
 
 	wmap_mlx.count = 0;
-	if (argc == 1)
-		return (1);
-	if (extension_error (argv[1]))
-		return (1);
 	fd = open (argv[1], O_RDONLY);
-	if (fd <= 0)
+	if (fd <= 0 || argc != 2)
+	{
+		ft_printf ("Error\n");
+		return (1);
+	}
+	if (extension_error (argv[1]))
 		return (1);
 	wmap_mlx.map = get_map_error (fd);
 	if (wmap_mlx.map == NULL)
