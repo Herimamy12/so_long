@@ -68,19 +68,19 @@ int	length_error(char **map, int length, int width)
 {
 	int	i;
 	int	j;
-	int	countLength;
+	int	count_length;
 
 	i = 0;
 	while (i < width)
 	{
 		j = 0;
-		countLength = 0;
+		count_length = 0;
 		while (map[i][j] != '\n' && map[i][j] != '\0')
 		{
-			countLength++;
+			count_length++;
 			j++;
 		}
-		if (countLength != length)
+		if (count_length != length)
 		{
 			ft_printf ("Error\n");
 			return (42);
@@ -94,22 +94,22 @@ int	player_error(char **map, int length, int width)
 {
 	int	i;
 	int	j;
-	int	countPlayer;
+	int	count_player;
 
 	i = 0;
-	countPlayer = 0;
+	count_player = 0;
 	while (i < width)
 	{
 		j = 0;
 		while (j < length)
 		{
 			if (map[i][j] == 'P')
-				countPlayer++;
+				count_player++;
 			j++;
 		}
 		i++;
 	}
-	if (countPlayer < 1 || 1 < countPlayer)
+	if (count_player < 1 || 1 < count_player)
 	{
 		ft_printf ("Error\n");
 		return (42);

@@ -12,15 +12,21 @@
 
 #include "so_long_bonus.h"
 
+void	init_data(t_dataStruct *data)
+{
+	data->count = 0;
+	data->p_state = 0;
+	data->p_dstate = 'R';
+	data->d_state = 0;
+	data->img_wdth = 35;
+	data->img_lngth = 35;
+}
+
 int	main(int argc, char **argv)
 {
 	int				fd;
 	t_dataStruct	data;
 
-	data.count = 0;
-	data.p_state = 0;
-	data.p_Dstate = 0;
-	data.d_state = 0;
 	fd = open (argv[1], O_RDONLY);
 	if (fd <= 0 || argc != 2)
 	{
@@ -30,6 +36,8 @@ int	main(int argc, char **argv)
 	data.map = get_map (fd, argv[1]);
 	if (data.map == NULL)
 		return (1);
+	init_data (&data);
 	so_long_bonus (&data);
+	free_data_image (&data);
 	return (0);
 }

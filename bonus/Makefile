@@ -9,7 +9,10 @@ SRC = main_bonus.c get_map_zero_bonus.c \
 		get_map_three_bonus.c \
 		\
 		so_long_bonus.c sprite_zero_bonus.c \
-		sprite_one_bonus.c
+		sprite_one_bonus.c sprite_two_bonus.c \
+		sprite_player.c sprite_three_bonus.c \
+		sprite_enemy.c init_data_image.c \
+		free_data_image.c
 
 OBJ = $(SRC:.c=.o)
 
