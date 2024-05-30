@@ -70,6 +70,7 @@ void	manage_to_leave(t_dataStruct *data)
 	if (collector_error (data->map, length, width))
 	{
 		ft_printf ("mouv = %d\n", data->count);
+		ft_printf ("You Win\n");
 		exit_window (data);
 	}
 }

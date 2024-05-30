@@ -11,8 +11,8 @@ SRC = main_bonus.c get_map_zero_bonus.c \
 		\
 		so_long_bonus.c sprite_zero_bonus.c \
 		sprite_one_bonus.c sprite_two_bonus.c \
-		sprite_player.c sprite_three_bonus.c \
-		sprite_enemy.c sprite_for_bonus.c \
+		sprite_player_bonus.c sprite_three_bonus.c \
+		sprite_enemy_bonus.c sprite_for_bonus.c \
 		sprite_five_bonus.c
 
 OBJ = $(SRC:.c=.o)

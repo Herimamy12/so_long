@@ -59,28 +59,28 @@ int	check_door_close(int keycode, t_dataStruct *data, int i, int j)
 
 void	ft_mouve_management(int keycode, t_dataStruct *data, int i, int j)
 {
-	if (keycode == 65307)
-		exit_window (data);
 	if (check_door_close (keycode, data, i, j))
 		return ;
 	else if (keycode == 119 && data->map[i - 1][j] != '1')
 	{
-		move_up (data, i, j);
 		data->p_dstate = 'U';
+		move_up (data, i, j);
 	}
 	else if (keycode == 97 && data->map[i][j - 1] != '1')
 	{
-		move_left (data, i, j);
 		data->p_dstate = 'L';
+		move_left (data, i, j);
 	}
 	else if (keycode == 115 && data->map[i + 1][j] != '1')
 	{
-		move_down (data, i, j);
 		data->p_dstate = 'D';
+		move_down (data, i, j);
 	}
 	else if (keycode == 100 && data->map[i][j + 1] != '1')
 	{
-		move_right (data, i, j);
 		data->p_dstate = 'R';
+		move_right (data, i, j);
 	}
+	else
+		sprite_player (data, i, j);
 }

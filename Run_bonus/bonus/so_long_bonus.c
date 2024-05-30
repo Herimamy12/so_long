@@ -27,9 +27,7 @@ int	ft_sprite_animation(t_dataStruct *data)
 		j = 0;
 		while (j < ln)
 		{
-			if (data->map[i][j] == 'P')
-				sprite_player (data, i, j);
-			else if (data->map[i][j] == 'd')
+			if (data->map[i][j] == 'd')
 				sprite_enemy (data, i, j);
 			j++;
 		}
