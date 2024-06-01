@@ -46,13 +46,13 @@ int	check_door_close(int keycode, t_dataStruct *data, int i, int j)
 	length = count_length_map (data->map);
 	if (collector_error (data->map, length, width))
 		return (0);
-	else if (keycode == 119 && data->map[i - 1][j] != 'E')
+	else if ((keycode == 119 || keycode == 65362) && data->map[i - 1][j] != 'E')
 		return (0);
-	else if (keycode == 97 && data->map[i][j - 1] != 'E')
+	else if ((keycode == 97 || keycode == 65361) && data->map[i][j - 1] != 'E')
 		return (0);
-	else if (keycode == 115 && data->map[i + 1][j] != 'E')
+	else if ((keycode == 115 || keycode == 65364) && data->map[i + 1][j] != 'E')
 		return (0);
-	else if (keycode == 100 && data->map[i][j + 1] != 'E')
+	else if ((keycode == 100 || keycode == 65363) && data->map[i][j + 1] != 'E')
 		return (0);
 	return (42);
 }
@@ -61,26 +61,40 @@ void	ft_mouve_management(int keycode, t_dataStruct *data, int i, int j)
 {
 	if (check_door_close (keycode, data, i, j))
 		return ;
-	else if (keycode == 119 && data->map[i - 1][j] != '1')
+	else if ((keycode == 119 || keycode == 65362) && data->map[i - 1][j] != '1')
 	{
 		data->p_dstate = 'U';
 		move_up (data, i, j);
 	}
-	else if (keycode == 97 && data->map[i][j - 1] != '1')
+	else if ((keycode == 97 || keycode == 65361) && data->map[i][j - 1] != '1')
 	{
 		data->p_dstate = 'L';
 		move_left (data, i, j);
 	}
-	else if (keycode == 115 && data->map[i + 1][j] != '1')
+	else if ((keycode == 115 || keycode == 65364) && data->map[i + 1][j] != '1')
 	{
 		data->p_dstate = 'D';
 		move_down (data, i, j);
 	}
-	else if (keycode == 100 && data->map[i][j + 1] != '1')
+	else if ((keycode == 100 || keycode == 65363) && data->map[i][j + 1] != '1')
 	{
 		data->p_dstate = 'R';
 		move_right (data, i, j);
 	}
 	else
-		sprite_player (data, i, j);
+		move_in_place (data, i, j, keycode);
+	move_the_enemy (data);
+}
+
+void	move_in_place(t_dataStruct *data, int i, int j, int keycode)
+{
+	if (keycode == 119 || keycode == 65362)
+		data->p_dstate = 'U';
+	else if (keycode == 97 || keycode == 65361)
+		data->p_dstate = 'L';
+	else if (keycode == 115 || keycode == 65364)
+		data->p_dstate = 'D';
+	else if (keycode == 100 || keycode == 65363)
+		data->p_dstate = 'R';
+	sprite_player (data, i, j);
 }

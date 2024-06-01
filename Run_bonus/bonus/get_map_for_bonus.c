@@ -16,22 +16,22 @@ int	enemy_error(char **map, int length, int width)
 {
 	int	i;
 	int	j;
-	int	count_exit;
+	int	count_enemy;
 
 	i = 0;
-	count_exit = 0;
+	count_enemy = 0;
 	while (i < width)
 	{
 		j = 0;
 		while (j < length)
 		{
 			if (map[i][j] == 'd')
-				count_exit++;
+				count_enemy++;
 			j++;
 		}
 		i++;
 	}
-	if (count_exit != 1)
+	if (count_enemy > 1)
 		return (42);
 	return (0);
 }

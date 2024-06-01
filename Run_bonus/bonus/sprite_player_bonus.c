@@ -16,12 +16,12 @@ void	sprite_player_right(t_dataStruct *data, int i, int j)
 {
 	if ((data->p_state) == 0)
 	{
-		fill_player_right (data, i, j);
+		fill_player_right2 (data, i, j);
 		(data->p_state) = 1;
 	}
 	else if ((data->p_state) == 1)
 	{
-		fill_player_right2 (data, i, j);
+		fill_player_right (data, i, j);
 		(data->p_state) = 2;
 	}
 	else if ((data->p_state) == 2)
@@ -35,12 +35,12 @@ void	sprite_player_left(t_dataStruct *data, int i, int j)
 {
 	if ((data->p_state) == 0)
 	{
-		fill_player_left (data, i, j);
+		fill_player_left2 (data, i, j);
 		(data->p_state) = 1;
 	}
 	else if ((data->p_state) == 1)
 	{
-		fill_player_left2 (data, i, j);
+		fill_player_left (data, i, j);
 		(data->p_state) = 2;
 	}
 	else if ((data->p_state) == 2)
@@ -54,12 +54,12 @@ void	sprite_player_up(t_dataStruct *data, int i, int j)
 {
 	if ((data->p_state) == 0)
 	{
-		fill_player_up (data, i, j);
+		fill_player_up2 (data, i, j);
 		(data->p_state) = 1;
 	}
 	else if ((data->p_state) == 1)
 	{
-		fill_player_up2 (data, i, j);
+		fill_player_up (data, i, j);
 		(data->p_state) = 2;
 	}
 	else if ((data->p_state) == 2)
@@ -73,12 +73,12 @@ void	sprite_player_down(t_dataStruct *data, int i, int j)
 {
 	if ((data->p_state) == 0)
 	{
-		fill_player_down (data, i, j);
+		fill_player_down2 (data, i, j);
 		(data->p_state) = 1;
 	}
 	else if ((data->p_state) == 1)
 	{
-		fill_player_down2 (data, i, j);
+		fill_player_down (data, i, j);
 		(data->p_state) = 2;
 	}
 	else if ((data->p_state) == 2)

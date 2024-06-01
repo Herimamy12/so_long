@@ -1,0 +1,14 @@
+Size :
+250 x 250
+
+Position 0:
+143 x 123
+
+Position 1:
+146 x 126
+
+Position 2:
+143 x 129
+
+Position 3:
+140 x 126
