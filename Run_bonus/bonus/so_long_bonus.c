@@ -24,6 +24,16 @@ void	manage_all_state(t_dataStruct *data)
 		(data->c_state)++;
 }
 
+void	ft_printf_mouve(t_dataStruct *data)
+{
+	fill_wall (data, 0, 1);
+	fill_wall (data, 0, 2);
+	snprintf (data->mouv_text, sizeof(data->mouv_text), "Movement : %d",
+		data->count);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 5, 15, 0xFF0000,
+		data->mouv_text);
+}
+
 int	ft_sprite_animation(t_dataStruct *data)
 {
 	int		i;
@@ -35,9 +45,7 @@ int	ft_sprite_animation(t_dataStruct *data)
 	ln = count_length_map (data->map);
 	wdth = count_width_map (data->map);
 	manage_all_state (data);
-	snprintf(data->mouv_text, sizeof(data->mouv_text), "texte : %d",
-		data->count);
-    mlx_string_put(data->mlx_ptr, data->win_ptr, 5, 15, 0xFF0000, data->mouv_text);
+	ft_printf_mouve (data);
 	while (i < wdth)
 	{
 		j = 0;

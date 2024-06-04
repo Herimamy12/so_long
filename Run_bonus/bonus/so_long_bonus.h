@@ -106,5 +106,6 @@ void	fill_collector2(t_dataStruct *p, int i, int j);
 void	fill_collector3(t_dataStruct *p, int i, int j);
 void	move_the_enemy(t_dataStruct *data);
 void	real_move(t_dataStruct *data, int i, int j);
+void	check_other_path(t_dataStruct *data, int i, int j);
 
 #endif
