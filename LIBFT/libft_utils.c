@@ -100,9 +100,9 @@ char	**ft_split(char const *s, char c)
 	int		len;
 	char	**str;
 
-	str = (char **)malloc(sizeof (char *) * (ft_count_word (s, c) + 1));
-	if (!s || !str)
+	if (!s)
 		return (NULL);
+	str = (char **)malloc(sizeof (char *) * (ft_count_word (s, c) + 1));
 	i = 0;
 	while (*s)
 	{

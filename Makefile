@@ -37,7 +37,7 @@ clean :
 		make clean -C ./SOLONG/
 
 fclean : clean
-		make clean -C ./bonus/
+		make fclean -C ./bonus/
 		make fclean -C ./SOLONG/
 		rm -f $(NAME) $(BONUS)
 

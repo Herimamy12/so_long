@@ -134,7 +134,7 @@ int	map_border_content_error(char **map, int length, int width)
 		ft_printf ("Error\n");
 		return (42);
 	}
-	if (exit_error (map, length, width))
+	if (exit_error (map, length, width) || enemy_error (map, length, width))
 	{
 		ft_printf ("Error\n");
 		return (42);

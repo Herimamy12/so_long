@@ -46,7 +46,7 @@ char	**ft_map_copy(char **charmap, int length, int width)
 		if (!map_copy[i])
 			return (NULL);
 		j = 0;
-		while (j < length)
+		while (j < length && charmap[i][j])
 		{
 			map_copy[i][j] = charmap[i][j];
 			j++;

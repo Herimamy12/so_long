@@ -83,7 +83,6 @@ void	ft_mouve_management(int keycode, t_dataStruct *data, int i, int j)
 	}
 	else
 		move_in_place (data, i, j, keycode);
-	move_the_enemy (data);
 }
 
 void	move_in_place(t_dataStruct *data, int i, int j, int keycode)

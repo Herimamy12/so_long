@@ -18,8 +18,7 @@ void	init_data(t_dataStruct *data)
 	data->p_state = 0;
 	data->p_dstate = 'R';
 	data->d_state = 0;
-	data->img_wdth = 35;
-	data->img_lngth = 35;
+	data->c_state = 0;
 }
 
 int	main(int argc, char **argv)
@@ -38,6 +37,5 @@ int	main(int argc, char **argv)
 		return (1);
 	init_data (&data);
 	so_long_bonus (&data);
-	free_data_image (&data);
 	return (0);
 }

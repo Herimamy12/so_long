@@ -14,32 +14,65 @@
 
 void	fill_player_right1(t_dataStruct *p, int i, int j)
 {
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->en0, j * 35, i * 35);
-	ft_printf ("i = %d, j = %d, rigth 1111\n", i, j);
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
+
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image(p->mlx_ptr, "./ib/plrR1.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }
 
 void	fill_player_right2(t_dataStruct *p, int i, int j)
 {
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->wall, j * 35, i * 35);
-	ft_printf ("i = %d, j = %d, rigth 2222\n", i, j);
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
+
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image(p->mlx_ptr, "./ib/plrR2.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }
 
 void	fill_player_left1(t_dataStruct *p, int i, int j)
 {
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->plrl1, j * 35, i * 35);
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
+
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./ib/plrL1.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }
 
 void	fill_player_left2(t_dataStruct *p, int i, int j)
 {
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->plrl2, j * 35, i * 35);
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
+
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./ib/plrL2.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }
 
 void	fill_player_up1(t_dataStruct *p, int i, int j)
 {
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->plru1, j * 35, i * 35);
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
+
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./ib/plrU1.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }

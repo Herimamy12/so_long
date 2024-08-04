@@ -14,36 +14,54 @@
 
 void	fill_player_right(t_dataStruct *p, int i, int j)
 {
-	// int		ig_w;
-	// int		ig_l;
-	// void	*ig_p;
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
 
-	// ig_w = 35;
-	// ig_l = 35;
-	// ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./ib/plrR.xpm", &ig_w, &ig_l);
-	// mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
-	// mlx_destroy_image (p->mlx_ptr, ig_p);
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->plrr, j * 35, i * 35);
-	ft_printf ("i = %d, j = %d, rigth\n", i, j);
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./ib/plrR.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }
 
 void	fill_player_left(t_dataStruct *p, int i, int j)
 {
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->plrl, j * 35, i * 35);
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
+
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./ib/plrL.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }
 
 void	fill_player_up(t_dataStruct *p, int i, int j)
 {
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->plru, j * 35, i * 35);
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
+
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./ib/plrU.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }
 
 void	fill_player_down(t_dataStruct *p, int i, int j)
 {
-	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, 
-		p->plrd, j * 35, i * 35);
+	int		ig_w;
+	int		ig_l;
+	void	*ig_p;
+
+	ig_w = 35;
+	ig_l = 35;
+	ig_p = mlx_xpm_file_to_image (p->mlx_ptr, "./ib/plrD.xpm", &ig_w, &ig_l);
+	mlx_put_image_to_window (p->mlx_ptr, p->win_ptr, ig_p, j * 35, i * 35);
+	mlx_destroy_image (p->mlx_ptr, ig_p);
 }
 
 void	fill_open_door(t_dataStruct *p, int i, int j)

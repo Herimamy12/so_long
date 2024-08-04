@@ -46,6 +46,7 @@ int		find_pos_i(char **charmap, int length, int width, char set);
 int		find_pos_y(char **charmap, int length, int width, char set);
 int		check_collector_exit_error(char **map, int ln, int wdth);
 void	check_the_path_error(char **map, int i, int y);
+void	check_the_second_path_error(char **map, int i, int y);
 void	so_long(t_wmap_mlx *p);
 void	fill_window(t_wmap_mlx *p, int ln, int wdth);
 void	fill_player(t_wmap_mlx *p, int i, int j);

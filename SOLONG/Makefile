@@ -6,6 +6,8 @@ CFLAGS = -Wall -Werror -Wextra -g
 
 SRC = main.c get_map.c get_map_next_one.c \
 		get_map_next_two.c get_map_next_three.c \
+		get_map_next_for.c \
+		\
 		so_long.c so_long_next_one.c \
 		so_long_next_two.c all_last_player.c \
 		sprite_zero.c

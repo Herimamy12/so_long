@@ -67,10 +67,10 @@ char	**get_char_map(int fd)
 		i++;
 	}
 	charmap = ft_split (tmp, '\n');
-	if (!charmap)
-		return (0);
 	free (tmp);
 	free (line);
+	if (!charmap)
+		return (NULL);
 	return (charmap);
 }
 
@@ -82,6 +82,11 @@ char	**get_map_error(int fd)
 	char	**map_copy;
 
 	charmap = get_char_map (fd);
+	if (!charmap)
+	{
+		ft_printf ("Error\n");
+		return (NULL);
+	}
 	width = count_width_map (charmap);
 	length = count_length_map (charmap);
 	map_copy = ft_map_copy (charmap, length, width);

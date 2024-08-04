@@ -113,5 +113,11 @@ int	check_collector_exit_error(char **map, int ln, int wdth)
 		ft_printf ("Error\n");
 		return (42);
 	}
+	check_the_second_path_error (map, pos_i_a, pos_y_a);
+	if (!exit_error (map, ln, wdth))
+	{
+		ft_printf ("Error\n");
+		return (42);
+	}
 	return (0);
 }
