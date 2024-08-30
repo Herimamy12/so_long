@@ -26,8 +26,15 @@ int	main(int argc, char **argv)
 	int				fd;
 	t_dataStruct	data;
 
+	if (argc != 2)
+	{
+		ft_printf ("Error\n");
+		return (1);
+	}
+	if (extension_error (argv[1]))
+		return (1);
 	fd = open (argv[1], O_RDONLY);
-	if (fd <= 0 || argc != 2)
+	if (fd <= 0)
 	{
 		ft_printf ("Error\n");
 		return (1);

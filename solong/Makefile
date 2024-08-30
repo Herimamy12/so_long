@@ -1,6 +1,6 @@
 NAME = libso_long.a
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Werror -Wextra -g
 
@@ -20,23 +20,20 @@ OBJ = $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-		make -C ../LIBFT/
-		make -C ../LIST/
-		make -C ../PRINTF/
+		make -C ../libft/
+		make -C ../printf/
 		make -C ../minilibx-linux/
 		ar rsc $@ $^
 
 clean :
-		make clean -C ../LIBFT/
-		make clean -C ../LIST/
-		make clean -C ../PRINTF/
+		make clean -C ../libft/
+		make clean -C ../printf/
 		make clean -C ../minilibx-linux/
 		rm -f $(OBJ)
 
 fclean : clean
-		make fclean -C ../LIBFT/
-		make fclean -C ../LIST/
-		make fclean -C ../PRINTF/
+		make fclean -C ../libft/
+		make fclean -C ../printf/
 		make clean -C ../minilibx-linux/
 		rm -f $(NAME)
 

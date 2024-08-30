@@ -61,6 +61,8 @@ char	**get_char_map(int fd)
 	i = 0;
 	while (line)
 	{
+		if (ft_strlen (line) < 2)
+			line = ft_strdup (line, " \n");
 		tmp = ft_strjoin (tmp, line);
 		free (line);
 		line = get_next_line (fd);
@@ -74,7 +76,7 @@ char	**get_char_map(int fd)
 	return (map);
 }
 
-char	**get_map(int fd, char *fileName)
+char	**get_map(int fd, char *file_name)
 {
 	int		width;
 	int		length;
@@ -90,7 +92,7 @@ char	**get_map(int fd, char *fileName)
 	width = count_width_map (map);
 	length = count_length_map (map);
 	map_copy = ft_map_copy (map, length, width);
-	if (extension_error (fileName))
+	if (extension_error (file_name))
 		return (NULL);
 	if (map_border_content_error (map, length, width))
 	{

@@ -60,14 +60,17 @@ char	**ft_map_copy(char **map, int length, int width)
 	return (map_copy);
 }
 
-int	extension_error(char *fileName)
+int	extension_error(char *file_name)
 {
 	char	*ext;
 
-	ext = ft_strrchr (fileName, '.');
+	ext = ft_strrchr (file_name, '.');
 	if (!ext)
+	{
+		ft_printf ("Error\n");
 		return (42);
-	if (!ft_strcmp (ext, ".ber"))
+	}
+	if (!ft_strcmp (ext, ".ber") || !(file_name - ext))
 	{
 		ft_printf ("Error\n");
 		return (42);

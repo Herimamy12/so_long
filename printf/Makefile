@@ -1,8 +1,8 @@
-CC = gcc
+CC = cc
 
 NAME = libftprintf.a
 
-LIBFT = ../LIBFT/libft.a
+LIBFT = ../libft/libft.a
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -16,7 +16,7 @@ OBJS = $(SRCS:.c=.o)
 all : $(NAME)
 
 $(LIBFT) :
-		make -C ../LIBFT/
+		make -C ../libft/
 
 $(NAME) : $(OBJS) $(LIBFT)
 		ar rsc $@ $^

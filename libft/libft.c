@@ -1,54 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.c                                       :+:      :+:    :+:   */
+/*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nherimam <nherimam@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 10:53:33 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/06 10:53:35 by nherimam         ###   ########.fr       */
+/*   Created: 2024/08/29 12:47:26 by nherimam          #+#    #+#             */
+/*   Updated: 2024/08/29 12:47:29 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "libft.h"
 
-t_list	*ft_lstnew(int content)
+char	*ft_strdup(char *old, char *str)
 {
-	t_list	*new;
+	int		i;
+	char	*new;
 
-	new = malloc(sizeof (t_list));
+	new = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
 	if (!new)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
-}
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	new->next = *lst;
-	*lst = new;
-}
-
-int	ft_lstsize(t_list *lst)
-{
-	int	i;
-
 	i = 0;
-	while (lst)
+	while (str[i])
 	{
+		new[i] = str[i];
 		i++;
-		lst = lst->next;
 	}
-	return (i);
-}
-
-t_list	*ft_lstfirst(t_list *lst)
-{
-	t_list	*first;
-
-	if (!lst)
-		return (NULL);
-	first = ft_lstnew (lst->content);
-	return (first);
+	new[i] = '\0';
+	free (old);
+	return (new);
 }

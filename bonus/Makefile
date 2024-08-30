@@ -1,6 +1,6 @@
 NAME = libso_long_bonus.a
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Werror -Wextra -g
 
@@ -24,9 +24,8 @@ OBJ = $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-		make -C ../LIBFT/
-		make -C ../LIST/
-		make -C ../PRINTF/
+		make -C ../libft/
+		make -C ../printf/
 		make -C ../minilibx-linux/
 		ar rsc $@ $^
 

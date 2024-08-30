@@ -13,9 +13,8 @@
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 
-# include "../LIST/list.h"
-# include "../LIBFT/libft.h"
-# include "../PRINTF/ft_printf.h"
+# include "../libft/libft.h"
+# include "../printf/ft_printf.h"
 # include "../minilibx-linux/mlx.h"
 # include <stdio.h>
 # include <fcntl.h>
@@ -39,7 +38,7 @@ typedef struct s_dataStruct
 }			t_dataStruct;
 
 int		main(int argc, char **argv);
-char	**get_map(int fd, char *fileName);
+char	**get_map(int fd, char *file_name);
 char	**get_char_map(int fd);
 int		count_length_map(char **map);
 int		count_width_map(char **map);

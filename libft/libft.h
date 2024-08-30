@@ -13,7 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "../PRINTF/ft_printf.h"
+# include "../printf/ft_printf.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 7000
@@ -34,5 +34,6 @@ char	**ft_split(char const *s, char c);
 int		ft_count_word(char const *s, char c);
 int		ft_isdigit(int c);
 int		ft_strcmp(char *cmd, char *set);
+char	*ft_strdup(char *old, char *str);
 
 #endif

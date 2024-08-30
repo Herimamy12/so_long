@@ -17,7 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-# include "../LIBFT/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_list
 {

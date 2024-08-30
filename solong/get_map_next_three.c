@@ -64,8 +64,11 @@ int	extension_error(char *file_name)
 
 	ext = ft_strrchr (file_name, '.');
 	if (!ext)
+	{
+		ft_printf ("Error\n");
 		return (42);
-	if (!ft_strcmp (ext, ".ber"))
+	}
+	if (!ft_strcmp (ext, ".ber") || !(file_name - ext))
 	{
 		ft_printf ("Error\n");
 		return (42);

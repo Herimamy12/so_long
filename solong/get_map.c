@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:43:51 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/27 08:17:07 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/08/28 13:52:22 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char	**get_char_map(int fd)
 	i = 0;
 	while (line)
 	{
+		if (ft_strlen (line) < 2)
+			line = ft_strdup (line, " \n");
 		tmp = ft_strjoin (tmp, line);
 		free (line);
 		line = get_next_line (fd);

@@ -6,7 +6,7 @@
 /*   By: nherimam <nherimam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:21:53 by nherimam          #+#    #+#             */
-/*   Updated: 2024/04/27 13:39:35 by nherimam         ###   ########.fr       */
+/*   Updated: 2024/08/28 13:53:17 by nherimam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ int	main(int argc, char **argv)
 	t_wmap_mlx	wmap_mlx;
 
 	wmap_mlx.count = 0;
-	if (argc == 1)
+	if (argc != 2)
+	{
+		ft_printf ("Error\n");
 		return (1);
+	}
 	if (extension_error (argv[1]))
 		return (1);
 	fd = open (argv[1], O_RDONLY);
