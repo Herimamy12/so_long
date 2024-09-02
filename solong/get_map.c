@@ -61,7 +61,7 @@ char	**get_char_map(int fd)
 	i = 0;
 	while (line)
 	{
-		if (ft_strlen (line) < 2)
+		if (ft_strlen (line) < 1)
 			line = ft_strdup (line, " \n");
 		tmp = ft_strjoin (tmp, line);
 		free (line);
@@ -86,7 +86,7 @@ char	**get_map_error(int fd)
 	charmap = get_char_map (fd);
 	if (!charmap)
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nMake sure your map is't empty\n");
 		return (NULL);
 	}
 	width = count_width_map (charmap);

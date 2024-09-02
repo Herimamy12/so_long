@@ -38,7 +38,7 @@ typedef struct s_dataStruct
 }			t_dataStruct;
 
 int		main(int argc, char **argv);
-char	**get_map(int fd, char *file_name);
+char	**get_map(int fd);
 char	**get_char_map(int fd);
 int		count_length_map(char **map);
 int		count_width_map(char **map);

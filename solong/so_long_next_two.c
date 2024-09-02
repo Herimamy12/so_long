@@ -37,7 +37,7 @@ void	move_up(t_wmap_mlx *data, int play_i, int play_j)
 		data->map[play_i][play_j] = '0';
 		data->map[play_i - 1][play_j] = 'P';
 	}
-	ft_printf ("mouv = %d\n", data->count);
+	ft_printf ("mouve = %d\n", data->count);
 }
 
 void	move_down(t_wmap_mlx *data, int play_i, int play_j)
@@ -65,7 +65,7 @@ void	move_down(t_wmap_mlx *data, int play_i, int play_j)
 		data->map[play_i][play_j] = '0';
 		data->map[play_i + 1][play_j] = 'P';
 	}
-	ft_printf ("mouv = %d\n", data->count);
+	ft_printf ("mouve = %d\n", data->count);
 }
 
 void	move_left(t_wmap_mlx *data, int play_i, int play_j)
@@ -93,7 +93,7 @@ void	move_left(t_wmap_mlx *data, int play_i, int play_j)
 		data->map[play_i][play_j] = '0';
 		data->map[play_i][play_j - 1] = 'P';
 	}
-	ft_printf ("mouv = %d\n", data->count);
+	ft_printf ("mouve = %d\n", data->count);
 }
 
 void	move_right(t_wmap_mlx *data, int play_i, int play_j)
@@ -121,7 +121,7 @@ void	move_right(t_wmap_mlx *data, int play_i, int play_j)
 		data->map[play_i][play_j] = '0';
 		data->map[play_i][play_j + 1] = 'P';
 	}
-	ft_printf ("mouv = %d\n", data->count);
+	ft_printf ("mouve = %d\n", data->count);
 }
 
 int	handle_keypress(int keycode, t_wmap_mlx *data)

@@ -56,7 +56,7 @@ void	manage_to_leave(t_wmap_mlx *data)
 	length = count_length_map (data->map);
 	if (collector_error (data->map, length, width))
 	{
-		ft_printf ("mouv = %d\n", data->count);
+		ft_printf ("mouve = %d\n", data->count);
 		exit_window (data);
 	}
 }

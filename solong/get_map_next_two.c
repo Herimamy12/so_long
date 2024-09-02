@@ -110,13 +110,13 @@ int	check_collector_exit_error(char **map, int ln, int wdth)
 	check_the_path_error (map, pos_i_a, pos_y_a);
 	if (!collector_error (map, ln, wdth))
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nNo path to the collector\n");
 		return (42);
 	}
 	check_the_second_path_error (map, pos_i_a, pos_y_a);
 	if (!exit_error (map, ln, wdth))
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nNo path to the exit\n");
 		return (42);
 	}
 	return (0);

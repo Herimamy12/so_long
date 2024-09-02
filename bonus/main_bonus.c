@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nCheck your arg number\n");
 		return (1);
 	}
 	if (extension_error (argv[1]))
@@ -36,10 +36,10 @@ int	main(int argc, char **argv)
 	fd = open (argv[1], O_RDONLY);
 	if (fd <= 0)
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nCheck if your file is valide\n");
 		return (1);
 	}
-	data.map = get_map (fd, argv[1]);
+	data.map = get_map (fd);
 	if (data.map == NULL)
 		return (1);
 	init_data (&data);

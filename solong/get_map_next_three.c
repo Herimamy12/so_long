@@ -65,12 +65,12 @@ int	extension_error(char *file_name)
 	ext = ft_strrchr (file_name, '.');
 	if (!ext)
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nExtension required\n");
 		return (42);
 	}
 	if (!ft_strcmp (ext, ".ber") || !(file_name - ext))
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nMap must be a name.ber\n");
 		return (42);
 	}
 	return (0);
@@ -91,6 +91,11 @@ int	content_error(char **charmap, int length, int width)
 	int	j;
 
 	i = 0;
+	if (length == width)
+	{
+		ft_printf ("Error\nMap carre is't valide\n");
+		return (42);
+	}
 	while (i < width)
 	{
 		j = 0;
@@ -98,7 +103,7 @@ int	content_error(char **charmap, int length, int width)
 		{
 			if (check_content (charmap[i][j]))
 			{
-				ft_printf ("Error\n");
+				ft_printf ("Error\nOther char detected\n");
 				return (42);
 			}
 			j++;

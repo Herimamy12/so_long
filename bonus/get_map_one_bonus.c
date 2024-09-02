@@ -27,7 +27,7 @@ int	border_top_bottom_error(char **map, int length, int width)
 			{
 				if (map[i][j] != '1')
 				{
-					ft_printf ("Error\n");
+					ft_printf ("Error\nVerify your wall top or bottom\n");
 					return (42);
 				}
 			}
@@ -53,7 +53,7 @@ int	border_left_right_error(char **map, int length, int width)
 			{
 				if (map[i][j] != '1')
 				{
-					ft_printf ("Error\n");
+					ft_printf ("Error\nVerify your wall left or right\n");
 					return (42);
 				}
 			}
@@ -82,7 +82,7 @@ int	length_error(char **map, int length, int width)
 		}
 		if (count_length != length)
 		{
-			ft_printf ("Error\n");
+			ft_printf ("Error\nMap must be rectangular\n");
 			return (42);
 		}
 		i++;
@@ -111,7 +111,7 @@ int	player_error(char **map, int length, int width)
 	}
 	if (count_player < 1 || 1 < count_player)
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nNumber of player isn't one\n");
 		return (42);
 	}
 	return (0);
@@ -131,12 +131,12 @@ int	map_border_content_error(char **map, int length, int width)
 		return (42);
 	if (collector_error (map, length, width))
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nNo collector in the map\n");
 		return (42);
 	}
 	if (exit_error (map, length, width) || enemy_error (map, length, width))
 	{
-		ft_printf ("Error\n");
+		ft_printf ("Error\nNumber of exit isn't one\n");
 		return (42);
 	}
 	if (check_collector_exit_error (map, length, width))
