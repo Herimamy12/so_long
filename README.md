@@ -1,3 +1,4 @@
+![so_long](so_long.png)
 # So Long - Projet Jeu 2D - 42
 
 **So Long** est un jeu vidéo en 2D développé dans le cadre du projet **So Long** de l'école 42. Ce projet a été conçu pour développer des compétences en gestion de mémoire, en utilisation de la bibliothèque graphique [MiniLibX](https://github.com/42Paris/minilibx) et en conception de jeux simples en utilisant des concepts comme les événements et l'affichage graphique.
